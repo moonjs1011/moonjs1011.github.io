@@ -6,7 +6,10 @@ tags: [ProblemSolving]     # TAG names should always be lowercase
 comment: true
 
 ---
- ![img](/_imgs/boj.png)
+
+![img](/_imgs/boj.png)
+
+
 <a href ='https://www.acmicpc.net/problem/1167'>문제링크 </a>
 
 트리 순회문제이다. 처음에는 다익스트라로 풀었는데 시간초과를 해결하지 못해서 기본적인 dfs로 풀었더니 바로 correct가 떴다...
