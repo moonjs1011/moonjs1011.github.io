@@ -1,18 +1,18 @@
 ---
 title: 백준_1167번_트리의 지름[C++]
 date: 2025-04-25 
-categories: [백준][PromblemSolving]
-tags: [ProblemSolving]     # TAG names should always be lowercase
+categories: [ProblemSolving]
+tags: [cpp, boj]     # TAG names should always be lowercase
 comment: true
-
 ---
 
-![img](/_imgs/boj.png)
+![img-description](/assets/img/boj.png)
 
 
-<a href ='https://www.acmicpc.net/problem/1167'>문제링크 </a>
+<a href ='https://www.acmicpc.net/problem/1167'>[문제링크] </a>
 
 트리 순회문제이다. 처음에는 다익스트라로 풀었는데 시간초과를 해결하지 못해서 기본적인 dfs로 풀었더니 바로 correct가 떴다...
+
 ```cpp
 #include<iostream>
 #include<vector>
@@ -44,7 +44,6 @@ void dfs(int vid,int distance){
         max_distance = distance;
         longest_vid = vid;
     }
-    
 }
 int main(){
     cin>>T;
@@ -67,5 +66,7 @@ int main(){
     dfs(longest_vid,0);
     cout<<max_distance<<"\n";
 }
+
 ```
+
 
