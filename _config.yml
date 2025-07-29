@@ -234,5 +234,4 @@ plugins:
   - jekyll-paginate
   - jekyll-gist
   - jekyll-include-cache
-  - jekyll-feed
   
