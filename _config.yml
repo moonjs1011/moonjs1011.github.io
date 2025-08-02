@@ -226,7 +226,7 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
-url:"https://moonjs1011.github.io" # the URL of your site, e.g. 'https://username.github.io'
+
 plugins:
   - jekyll-sitemap
   - jekyll-paginate
