@@ -48,7 +48,7 @@ social:
 
 # Site Verification Settings
 webmaster_verifications:
-  google: # fill in your Google verification code
+  google: vyKBI1XjMgZSULLFnzMdMYUvdqR39BOTSpc81AyOwDw #fill in your Google verification code
   bing: # fill in your Bing verification code
   alexa: # filll in your Alexa verification code
   yandex: # fill in your Yandex verification code
@@ -226,7 +226,7 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
-
+url:"https://moonjs1011.github.io" # the URL of your site, e.g. 'https://username.github.io'
 plugins:
   - jekyll-sitemap
   - jekyll-paginate
