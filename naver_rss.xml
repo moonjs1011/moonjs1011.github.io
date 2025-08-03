@@ -1,0 +1,33 @@
+---
+layout: none
+permalink: /naver_rss.xml
+content_type: application/rss+xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>{{ site.title | xml_escape }}</title>
+    <link>https://moonjs1011.github.io{{ site.baseurl }}</link>
+    <description>{{ site.description | xml_escape }}</description>
+    <language>ko-KR</language>
+    <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastBuildDate>
+    <ttl>60</ttl>
+    <atom:link 
+      href="https://moonjs1011.github.io/naver_rss.xml" 
+      rel="self" 
+      type="application/rss+xml" 
+      xmlns:atom="http://www.w3.org/2005/Atom"/>
+
+    {% for post in site.posts %}
+    <item>
+      <title>{{ post.title | xml_escape }}</title>
+      <link>https://moonjs1011.github.io{{ post.url }}</link>
+      <description><![CDATA[
+        {{ post.excerpt | default: post.content | strip_html | truncate: 500 }}
+      ]]></description>
+      <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+      <guid isPermaLink="true">https://moonjs1011.github.io{{ post.url }}</guid>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
