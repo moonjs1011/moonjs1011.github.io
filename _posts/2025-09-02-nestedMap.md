@@ -6,7 +6,7 @@ tags: [cpp,datastructure]     # TAG names should always be lowercase
 comment: true
 ---
 
-![STL]("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShWi65XcWLRp6Qa1QVUKu3OdM0yeY9XXVrgA&s")
+![STL](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShWi65XcWLRp6Qa1QVUKu3OdM0yeY9XXVrgA&s)
 
 # 일반적인 Map
 
@@ -75,10 +75,12 @@ doubleMap['D'] ['A'] = 16 doubleMap['D'] ['B'] = 17 doubleMap['D'] ['C'] = 18 do
 doubleMap['E'] ['A'] = 21 doubleMap['E'] ['B'] = 22 doubleMap['E'] ['C'] = 23 doubleMap['E'] ['D'] = 24 doubleMap['E'] ['E'] = 25 
 ```
 의도했던 바와 같다.
---- 
 
-PS를 하다가 일반적인 int형 index 접근(2차원 배열, `matrix[4][5]`와 같은)이 아닌 string형 key 접근이 필요한 순간이 온다. 예를 들어 `doubleMap["John"]["James"] = 5` 처럼 인물간의 관계를 표현할 때 사용된다.
+
+PS를 하다가 일반적인 `int`형 `index` 접근(2차원 배열, `matrix[4][5]`와 같은)이 아닌 `string`형 `key` 접근이 필요한 순간이 온다. 예를 들어 `doubleMap["John"]["James"] = 5` 처럼 인물간의 관계를 표현할 때 사용된다.
 이런 경우에는 다음과 같이 선언하면 된다.
 ```cpp
 map<string, map<string, int>> doubleMap;
 ```
+
+다음번에는 STL을 사용하지 않고 직접 구현을 해봐야겠다.
