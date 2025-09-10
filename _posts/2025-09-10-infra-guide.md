@@ -6,7 +6,13 @@ tags: [vpc,subnet,ec2,ecs,ecr,github-actions,rds,redis]
 comment: true
 ---
 
-PDF로 정리해둔 인프라 구축 가이드를 블로그용으로 다시 요약했다. VPC 설계부터 RDS/Redis, ECR 빌드 파이프라인, ECS 서비스 배포까지 한 번에 확인할 수 있는 체크리스트다.
+PDF로 정리해둔 인프라 구축 가이드를 블로그용으로 다시 요약했다. VPC 설계부터 RDS/Redis, ECR 빌드 파이프라인, ECS 서비스 배포까지 한 번에 확인할 수 있는 체크리스트다. 원본 PDF(스크린샷 포함)를 바로 볼 수 있도록 첨부했다.
+
+## 전체 문서/스크린샷 보기
+- 바로 보기: <object data=\"/assets/files/infra-guide.pdf\" type=\"application/pdf\" width=\"100%\" height=\"800px\"></object>
+- 다운로드: [infra-guide.pdf](/assets/files/infra-guide.pdf)
+- 대표 페이지 미리보기  
+![infra guide page1](/assets/img/infra-guide-page1.png)
 
 ## 1. 네트워크 설계
 - **VPC**: 하나의 VPC에서 퍼블릭/프라이빗 서브넷을 분리. AZ 2개 이상으로 구성해 가용성 확보.
