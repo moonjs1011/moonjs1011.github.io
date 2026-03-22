@@ -55,4 +55,3 @@ long query(int node, int l, int r, int ql, int qr) {
 - 업데이트 후 부모를 즉시 재계산하면 별도 `build` 함수가 필요 없다.
 - 세그먼트 트리는 "구간 질의 + 잦은 업데이트"라는 문제 특화 도구다. 문제에서 두 조건이 동시에 나오면 바로 떠올릴 것.
 
-참고 코드: `/Users/sung_1/Documents/2026-1/Algorithm/study-season-01/05 Range Sum/문성원/SegmentTree.java`.
