@@ -2,7 +2,7 @@
 title: Spring Cloud Gateway 간단한 실습
 date: 2025-09-30
 categories: [Spring,Spring Cloud Gateway,MSA]
-tags: [msa,spring cloud gateway]     # TAG names should always be lowercase
+tags: [msa, spring-cloud-gateway]     # TAG names should always be lowercase
 comment: true
 ---
 # Spring CloudGateway란?

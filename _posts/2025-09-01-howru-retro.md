@@ -2,7 +2,7 @@
 title: HowRU 프로젝트 회고 - 배포 막판에 겪은 네 가지 이슈
 date: 2025-09-01
 categories: [Project,Retrospective]
-tags: [howru,kafka,cors,auth,msa]
+tags: [howru, kafka, cors, auth, msa]
 comment: true
 ---
 

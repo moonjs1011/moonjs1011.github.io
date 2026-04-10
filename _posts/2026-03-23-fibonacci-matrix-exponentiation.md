@@ -2,7 +2,7 @@
 title: "피보나치 - 행렬 거듭제곱으로 O(log N) 풀기"
 date: 2026-03-23
 categories: [Algorithm,DivideAndConquer]
-tags: [java,fibonacci,matrix,exponentiation,dp]
+tags: [java, fibonacci, matrix, exponentiation, dp]
 comment: true
 math: true
 ---

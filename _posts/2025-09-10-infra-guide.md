@@ -2,7 +2,7 @@
 title: 인프라 구축 가이드 - VPC부터 ECS까지 체크리스트
 date: 2025-09-10
 categories: [Infrastructure,AWS]
-tags: [vpc,subnet,ec2,ecs,ecr,github-actions,rds,redis]
+tags: [vpc, subnet, ec2, ecs, ecr, github-actions, rds, redis]
 comment: true
 ---
 

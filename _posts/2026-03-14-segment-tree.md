@@ -2,7 +2,7 @@
 title: 세그먼트 트리로 구간합과 포인트 업데이트 처리하기
 date: 2026-03-14
 categories: [Algorithm,DataStructure]
-tags: [java,segment-tree,range-sum]
+tags: [java, segment-tree, range-sum]
 comment: true
 ---
 
@@ -54,4 +54,3 @@ long query(int node, int l, int r, int ql, int qr) {
 - 범위 밖일 때 0을 반환하는 패턴이 직관적이고 오류가 적다.
 - 업데이트 후 부모를 즉시 재계산하면 별도 `build` 함수가 필요 없다.
 - 세그먼트 트리는 "구간 질의 + 잦은 업데이트"라는 문제 특화 도구다. 문제에서 두 조건이 동시에 나오면 바로 떠올릴 것.
-
