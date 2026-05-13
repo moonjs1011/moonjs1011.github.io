@@ -1,5 +1,5 @@
 ---
-title: @Mockito 사용하여 테스트하기 (Spring)
+title: Mockito 사용하여 테스트하기 (Spring)
 date: 2026-05-13
 categories: [Spring]
 tags: [java, Spring]
