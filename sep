@@ -1,0 +1,419 @@
+[33mcommit b25df3c1ba9c8c682bd1621409d9dd3495336cf7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Fri Apr 10 13:01:50 2026 +0900
+
+    Fix : 게시글 tag들 변경
+
+[33mcommit 3ad28b66fb81f30e5111acb0ba5f172668d89289[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Fri Apr 10 12:57:49 2026 +0900
+
+    Add : new Post
+
+[33mcommit c53857ac0d7d94c5ca94ddb32c01fceecc4841e3[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Mon Mar 23 22:06:14 2026 +0900
+
+    Add : 백준 11444 피보나치 수 6 post
+
+[33mcommit 8b8f9dfc0976b05f62b5f5830e1c982f2ff402a5[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Mon Feb 23 12:00:00 2026 +0900
+
+    Add post: 백준 4485 젤다지 (Java)
+
+[33mcommit 801ba29a35e003d597f79a0df6fd60a5e62cccc2[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Mon Feb 16 12:00:00 2026 +0900
+
+    Add post: 백준 1504 특정한 최단 경로 (Java)
+
+[33mcommit b42138a274fdf8c54311bdbdfbc0ca3029429c69[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Mon Feb 9 12:00:00 2026 +0900
+
+    Add post: 백준 1197 최소 스패닝 트리 (Java)
+
+[33mcommit 49cc46bffdbea1a3cbc8168f2f35dc145759cf3e[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Mon Feb 2 12:00:00 2026 +0900
+
+    Add post: 백준 1717 집합의 표현 (Java)
+
+[33mcommit e45938a63ca69f2450a46930df6c067e082e161a[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Mon Jan 26 12:00:00 2026 +0900
+
+    Add post: 백준 2630 색종이 만들기 (Java)
+
+[33mcommit da81370088b43a99a6283dd7eca403ee9b9c0be1[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Wed Sep 10 12:45:00 2025 +0900
+
+    Update : add per-page images for 인프라 구축 가이드
+
+[33mcommit 6de0e947d3ea0314e67a3ffe803f2aaade07cb74[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Wed Sep 10 12:30:00 2025 +0900
+
+    Update : add PDF & preview for 인프라 구축 가이드
+
+[33mcommit fae8404f7f939353379cd28537caeb1ecc91e076[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Wed Sep 10 12:00:00 2025 +0900
+
+    Add : new post [인프라 구축 가이드 - VPC부터 ECS까지 체크리스트]
+
+[33mcommit 9ce4b7e821caacd50d60b7683e95b9428c8b92fd[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Sun Mar 22 15:17:14 2026 +0900
+
+    Fix : [세그먼트 트리로 구간합과 포인트 업데이트 처리하기] 글 수정
+
+[33mcommit 82a53b48c30a9a7d56cc4a183cffca85b50e1d7d[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Mon Sep 1 12:00:00 2025 +0900
+
+    Add : new post [HowRU 프로젝트 회고 - 배포 막판에 겪은 네 가지 이슈]
+
+[33mcommit a9a4eff11045bd0e004bec0e3e5b84dc687f9c46[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Sat Mar 14 12:00:00 2026 +0900
+
+    Add : new post [세그먼트 트리로 구간합과 포인트 업데이트 처리하기]
+
+[33mcommit 7a3cb0da1e5e8d881a877438ed946f1714d10b24[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Fri Mar 13 12:00:00 2026 +0900
+
+    Add : new post [LCS - 순수 재귀 vs 메모이제이션 성능 비교]
+
+[33mcommit 719c1cb9382a551cc582be84ef88b0309525d167[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Thu Mar 12 12:00:00 2026 +0900
+
+    Add : new post [다익스트라 + 우선순위큐로 특정 경유 최단경로 구하기]
+
+[33mcommit 825f28ac89dfeca784d8e6ea4df924d8452549f1[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Fri Dec 12 04:05:50 2025 +0900
+
+    Add new post & imgs
+
+[33mcommit 2bf7963c68104b4c5d33189acb0dc445b5edb7cf[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Wed Nov 5 20:51:41 2025 +0900
+
+    New post
+
+[33mcommit 12f3d24c31c70f0acf48295af24beede8285a43a[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Sep 30 16:34:06 2025 +0900
+
+    Fix _config.yml
+
+[33mcommit b74286598c86ff82cbe6991a98be8fba0740c9cb[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Sep 30 16:20:17 2025 +0900
+
+    Add robots.txt
+
+[33mcommit dc52f91200079af2527f61bc539fb9910eaf5c5a[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Sep 30 16:10:22 2025 +0900
+
+    Add new post
+
+[33mcommit 2c3c526b0ad8ab764d9c9bca9018aec3e4c6dbb0[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Thu Sep 25 16:49:25 2025 +0900
+
+    Add new post
+
+[33mcommit 1029cf9535490301bc61db6ac45cafd691b4cc16[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Sep 2 17:25:00 2025 +0900
+
+    new post nestedMap
+
+[33mcommit cb41749a426a5b57ff52ea6e48ebdb2efb711440[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Sep 2 17:22:44 2025 +0900
+
+    new post nestedMap
+
+[33mcommit 0030e8857fa5f06bb121a64b61174f20318772ed[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Mon Aug 25 00:45:18 2025 +0900
+
+    new post
+
+[33mcommit 2209064b2be4276e6acdd47445214f25e0c113cd[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Thu Aug 7 22:04:47 2025 +0900
+
+    niginx_post
+
+[33mcommit ac3531430e9446b5a4157a7a7c76305e91aa85b3[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Sun Aug 3 17:00:32 2025 +0900
+
+    Add favicon
+
+[33mcommit 9ffbb24c8f5cfb0749f94c17a2d7ab2e4d62a889[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Sun Aug 3 16:30:00 2025 +0900
+
+    Add naver_rss.xml
+
+[33mcommit 5a5099c44e1d428057606ef54933579abf42abb4[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Sat Aug 2 19:16:04 2025 +0900
+
+    webmater
+
+[33mcommit 40909eb8a73d9b84c1ca2140deae344c9e2359b3[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Sat Aug 2 19:14:16 2025 +0900
+
+    webmater
+
+[33mcommit 2343e78d2916ed950118e5d517725a6e03e5c9d5[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Sat Aug 2 19:11:48 2025 +0900
+
+    delete robot.txt
+
+[33mcommit 5aa3b03ad2fcaac01d8f295a76806b7a941dba48[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Sat Aug 2 19:06:24 2025 +0900
+
+    delete robot.txt
+
+[33mcommit 05ab4a98871fec1ba7c58f7dd5c3cd27aaa32615[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Sat Aug 2 19:05:38 2025 +0900
+
+    new post
+
+[33mcommit 6655531f06cb3877aa12282cfba48ad63c667a52[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Jul 29 14:55:46 2025 +0900
+
+    remove sitemap
+
+[33mcommit e4dc9a4203f2def3fb675cd3b8341d55f37ca6d5[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Jul 29 14:21:59 2025 +0900
+
+    rss.xml
+
+[33mcommit 7c59ab953ba4352d589ea7371770486285a61a72[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Jul 29 14:11:53 2025 +0900
+
+    dd
+
+[33mcommit 096b73c98b275d10067fb0bdc159827db0f2b19d[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Jul 29 14:06:34 2025 +0900
+
+    feed.xml +
+
+[33mcommit ae853745e6067d4e9ce4838315cac1dfc3f7f7bd[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Jul 29 14:00:24 2025 +0900
+
+    feed.xml
+
+[33mcommit 179f2773b556f8f954a472c0d26fd63e26484521[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Jul 29 12:30:05 2025 +0900
+
+    fix: 테마의 내장 피드 생성 비활성화
+
+[33mcommit c35f38cb56f8c5950c290a3c27948c96be7e9ee0[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Jul 29 12:28:02 2025 +0900
+
+    fix: jekyll-feed 플러그인 제거하여 수동 RSS 피드 사용
+
+[33mcommit 5870d1c64c5bd422a350ad9e080c6b3f0b84a15a[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Jul 29 12:11:29 2025 +0900
+
+    docs: 네이버 검색엔진을 위한 RSS 2.0 포맷으로 feed.xml 수정
+
+[33mcommit 00c3aee0b89f8eb7d9cc3397256610fc3cfa1718[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Jul 29 12:02:28 2025 +0900
+
+    conf update
+
+[33mcommit fdc6fa4a925f08b8f523c4b45e2d9aaf93a27c38[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Jul 29 11:44:12 2025 +0900
+
+    add naver.html
+
+[33mcommit eb5d6f50f8b7af0baec5c067a6ee3c946536d989[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Jul 29 11:42:47 2025 +0900
+
+    add naver.html
+
+[33mcommit aa84b01b390acebbde7e7f1939f8322161f2bf7b[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Jul 29 11:20:15 2025 +0900
+
+    add conf
+
+[33mcommit da0889b7afa97b7d80de07bcc4b4d8bb9e9c0773[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Jul 29 11:03:47 2025 +0900
+
+    add conf
+
+[33mcommit 3df25c2f633059c7e584fbd40076e2ae8e3d68d6[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Jul 29 10:52:34 2025 +0900
+
+    add conf
+
+[33mcommit dedacd0a97f7eb99ba0d5fb8d0119c7dd9a496af[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Jul 29 10:40:10 2025 +0900
+
+    update _config.yml
+
+[33mcommit d5bf471b4c773a1bd6c9345b3c18d64906b4752c[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Sun Jul 27 18:20:17 2025 +0900
+
+    add new Post and Profile image
+
+[33mcommit e61a69029630517c8a5cf2254370d29122269f3e[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Sun Jul 27 13:09:02 2025 +0900
+
+    add config
+
+[33mcommit a91c25ec1522f3812980f816df85e6340f18faf3[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Mon Jun 23 22:16:56 2025 +0900
+
+    new_post
+
+[33mcommit 1ffc7580666a784c15da7dda54e4008b9cec3b77[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Sun Jun 22 23:56:00 2025 +0900
+
+    edit
+
+[33mcommit 00484bdd28e1259372569f715ca83df58c22ca2d[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Sun Jun 22 23:50:25 2025 +0900
+
+    edit
+
+[33mcommit 6c14f16ad2e54e0e29a4567ba05aafe58708443d[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Sun Jun 22 21:55:19 2025 +0900
+
+    edit_post
+
+[33mcommit 0b48de941f4252ea7b937b6ad445092bd26bdc92[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Sun Jun 22 21:52:59 2025 +0900
+
+    edit_post
+
+[33mcommit 67e002bbde45eb03759620ef4c92e6e4c3220f5e[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Sun Jun 22 21:24:21 2025 +0900
+
+    fix_post
+
+[33mcommit 1b1635d3b6f59014bb9fa441515faf8bdd7defe4[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Sun Jun 22 21:21:48 2025 +0900
+
+    new post
+
+[33mcommit 655386cfa4c1bb6069ba812df9615c6f36fa1464[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Fri May 16 17:05:51 2025 +0900
+
+    fix title
+
+[33mcommit cbe1883b6e774606c279a776b6127480777370aa[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Fri May 16 16:48:09 2025 +0900
+
+    fi
+
+[33mcommit d6284a8284c5cb11cc9ed14c5f87ede554c177b4[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Fri May 16 16:45:18 2025 +0900
+
+    post2
+
+[33mcommit 8394cfeece61139f783f8431a2373467b87f5255[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Fri May 16 15:08:32 2025 +0900
+
+    new post
+
+[33mcommit b3e7430545d6993a003793a2fb0634e95d283370[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue May 6 19:28:44 2025 +0900
+
+    post2
+
+[33mcommit eddeee39544615ed0f6d102ee8c672af105663b8[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue May 6 16:59:30 2025 +0900
+
+    new post
+
+[33mcommit bcee0d4bbb28e466d706b2f5e490aca7d4fcc4f0[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Mon May 5 14:08:37 2025 +0900
+
+    new_post
+
+[33mcommit ec3ef39dc985e3f7206f76ea510b6cab57df6d3a[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Apr 29 12:21:16 2025 +0900
+
+    ps
+
+[33mcommit 2e7ee2c0b25920d3136be63c239696168f502962[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Apr 29 11:37:52 2025 +0900
+
+    cpp
+
+[33mcommit 67f6c1771d77d7c7926065b03c81dc1511d31bec[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Apr 29 01:13:28 2025 +0900
+
+    cpp
+
+[33mcommit 2f013af41bedb20dea0e7f73a1c3d970e58a6b60[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Tue Apr 29 01:08:32 2025 +0900
+
+    1167.cpp
+
+[33mcommit 9e5bbf3b8a0668b4605f65f032b337ed4345cc9e[m
+Author: sung_1 <moonjs1011@naver.com>
+Date:   Sun Apr 27 23:42:04 2025 +0900
+
+    init
+
+[33mcommit e713f5d30a914cc219f1dd6158707bca43f1236b[m
+Author: Sung_1 <87971454+moonjs1011@users.noreply.github.com>
+Date:   Sun Apr 27 23:32:39 2025 +0900
+
+    Initial commit
