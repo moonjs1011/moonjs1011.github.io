@@ -55,8 +55,8 @@ webmaster_verifications:
   baidu: # fill in your Baidu verification code
   facebook: # fill in your Facebook verification code
 
-seo:
-  robots: false
+# seo:
+#   robots: false  # 이 설정은 Google 인덱싱을 막을 수 있으므로 비활성화
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
