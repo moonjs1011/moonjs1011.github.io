@@ -2,7 +2,24 @@
   "permissions": {
     "allow": [
       "Bash(dir *)",
-      "Bash(bundle exec *)"
+      "Bash(bundle exec *)",
+      "Bash(bundle install *)",
+      "Bash(ruby --version)",
+      "Bash(gem --version)",
+      "Read(//usr/local/**)",
+      "Read(//c//**)",
+      "Bash(export PATH=\"/c/Ruby31-x64/bin:$PATH\")",
+      "Bash(bundle --version)",
+      "Bash(jobs -l)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4000)",
+      "Bash(pkill -f \"jekyll serve\")",
+      "Bash(curl -s -o /dev/null -w \"HTTP Status: %{http_code}\" http://localhost:4000)",
+      "Bash(grep -rn \"math\\\\|latex\\\\|mathjax\\\\|katex\\\\|\\\\$\\\\$\" /c/SSAFY/workspace/etc/moonjs1011.github.io/_posts/)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\" http://localhost:4000)",
+      "Bash(JEKYLL_ENV=production bundle exec jekyll build -d /tmp/site_prod)",
+      "Read(//tmp/site_prod/**)",
+      "PowerShell(Get-Command *)",
+      "PowerShell($env:PATH -split ';' | Where-Object { $_ -match 'ruby|gem|bundle' })"
     ]
   }
 }

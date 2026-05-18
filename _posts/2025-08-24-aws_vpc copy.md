@@ -1,7 +1,7 @@
 ---
 title: Aws 개념
 date: 2025-08-24
-categories: [Aws]
+categories: [AWS]
 tags: [infra]     # TAG names should always be lowercase
 comment: true
 ---

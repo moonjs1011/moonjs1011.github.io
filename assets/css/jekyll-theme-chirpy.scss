@@ -3,5 +3,5 @@
 // 1) Load the full Chirpy theme (both light & dark)
 @use "main.bundle";
 
-// 2) Then import your custom overrides
-
+// 2) Glass Theme overrides
+@use "glass-theme";

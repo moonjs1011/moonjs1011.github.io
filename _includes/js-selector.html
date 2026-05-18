@@ -1,0 +1,54 @@
+{% comment %}
+  Chirpy-compatible JS selector for jekyll-theme-chirpy v7.5.
+  Scripts use `defer` so they execute after DOM is parsed (even though loaded in <head>).
+  theme.min.js is loaded separately via Chirpy's head.html and does NOT use defer (runs early).
+{% endcomment %}
+
+{%- assign js_dist = '/assets/js/dist' -%}
+
+<script src="{{ js_dist | append: '/commons.min.js' | relative_url }}" defer></script>
+
+{%- case page.layout -%}
+
+  {%- when 'home' -%}
+    <script src="{{ js_dist | append: '/home.min.js' | relative_url }}" defer></script>
+
+  {%- when 'categories' -%}
+    <script src="{{ js_dist | append: '/categories.min.js' | relative_url }}" defer></script>
+
+  {%- when 'post' -%}
+    <script src="{{ js_dist | append: '/post.min.js' | relative_url }}" defer></script>
+
+    {%- if page.math -%}
+      <script defer>
+        window.MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            tags: 'ams'
+          },
+          options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+        };
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" defer></script>
+    {%- endif -%}
+
+    {%- if page.mermaid -%}
+      <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+          startOnLoad: true,
+          theme: document.documentElement.getAttribute('data-mode') === 'light' ? 'default' : 'dark'
+        });
+      </script>
+    {%- endif -%}
+
+  {%- when 'page' -%}
+    <script src="{{ js_dist | append: '/page.min.js' | relative_url }}" defer></script>
+
+  {%- else -%}
+    {%- unless page.layout == 'compress' -%}
+      <script src="{{ js_dist | append: '/misc.min.js' | relative_url }}" defer></script>
+    {%- endunless -%}
+
+{%- endcase -%}

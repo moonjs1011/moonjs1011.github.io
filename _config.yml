@@ -192,6 +192,10 @@ defaults:
     values:
       comments: false
   - scope:
+      path: "assets/files"
+    values:
+      sitemap: false
+  - scope:
       path: ""
       type: tabs # see `site.collections`
     values:
