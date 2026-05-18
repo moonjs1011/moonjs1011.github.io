@@ -220,6 +220,9 @@ exclude:
   - purgecss.js
   - rollup.config.js
   - "package*.json"
+  - "assets/img/*.html"
+  - "assets/img/*_files"
+  - "post-exmaple.md"
 
 jekyll-archives:
   enabled: [categories, tags]
