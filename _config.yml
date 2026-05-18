@@ -231,7 +231,6 @@ jekyll-archives:
     category: /categories/:name/
 
 plugins:
-  - jekyll-sitemap
   - jekyll-paginate
   - jekyll-gist
   - jekyll-include-cache
