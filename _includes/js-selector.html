@@ -34,13 +34,7 @@
     {%- endif -%}
 
     {%- if page.mermaid -%}
-      <script type="module">
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({
-          startOnLoad: true,
-          theme: document.documentElement.getAttribute('data-mode') === 'light' ? 'default' : 'dark'
-        });
-      </script>
+      <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js" defer></script>
     {%- endif -%}
 
   {%- when 'page' -%}
