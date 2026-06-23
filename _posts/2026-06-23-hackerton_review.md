@@ -1,6 +1,6 @@
 ---
 title: SSAFY X Kakao tech bootcamp AI Hackathon 회고
-date: 2025-05-16
+date: 2025-06-23
 categories: [hackerton,kakao,ssafy]
 tags: [hackerton, kakao,ssafy]     # TAG names should always be lowercase
 comment: true
