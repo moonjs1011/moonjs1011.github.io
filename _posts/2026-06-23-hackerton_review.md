@@ -6,7 +6,7 @@ tags: [hackerton, kakao,ssafy]     # TAG names should always be lowercase
 comment: true
 ---
 
-![hackerton](https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNjA1MTlfMjkz%2FMDAxNzc5MTQ3NTYwNTEy.nPfuws4BZH6r7svwhZSDacKKgB7cREmWkALq1B3c-KEg.xVAe1soR2e6oGY0i0c0 cFiLq9rtItSkzesDxT89-7ngg.PNG%2F%25C7%25D8%25C4%25BF%25C5%25E6_%25B0%25F8%25C1%25F6%25281%25C2%25F7%2529.png&type=a340)
+![hackerton](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg-0H6DXAsHKft5ZXuNauzJvHEweLGJbNKj_iFwolFWw&s)
 
 해커톤에 다녀왔습니다. 100개 이상팀이 지원했다는데 운이 좋게 상위 6개팀에 선정되어 용인 카카오 AI캠퍼스에 다녀왔습니다.
 ![show](../assets/img/hackerton/18.jpeg)
