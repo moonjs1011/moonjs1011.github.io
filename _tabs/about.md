@@ -1,29 +1,31 @@
 ---
-# the default layout is 'page'
-icon: fas fa-info-circle
+title: About
+icon: fas fa-user
 order: 4
 ---
 
+<div class="about-intro">
+  <span class="section-eyebrow">ABOUT ME</span>
+  <h2>복잡한 문제를 작게 나누고,<br>동작하는 결과로 연결하는 개발자 문성원입니다.</h2>
+  <p>인하대학교 컴퓨터공학과에서 공부하고 있으며, Spring Boot와 Java 기반의 서버 개발에 집중하고 있습니다. 기능 구현에 그치지 않고 왜 이 구조를 선택했는지, 실패한 접근에서 무엇을 배웠는지 설명할 수 있는 개발을 지향합니다.</p>
+</div>
 
+## Core strengths
 
-## 기본 정보
+<div class="strength-grid">
+  <div><strong>Backend</strong><span>Spring Boot · Java · REST API · MyBatis</span></div>
+  <div><strong>Infrastructure</strong><span>AWS · Docker · Nginx · CI/CD</span></div>
+  <div><strong>Problem Solving</strong><span>자료구조 · 그래프 · 동적 계획법</span></div>
+  <div><strong>Collaboration</strong><span>API 설계 · 문서화 · 팀 프로젝트</span></div>
+</div>
 
-* **Name**: 문성원
-* **Birth**: 2001.08.09
-* **Gender**: 남
+## Selected experience
 
-## 소개
+- **AI 기반 보이스피싱 공동 대응 플랫폼** — Spring Boot 백엔드, PostgreSQL 데이터 모델링 및 클라이언트 연동
+- **서비스 인프라 구축 가이드** — AWS 네트워크부터 배포까지 69페이지 실습 문서 작성
+- **기술 학습 기록** — 구현 과정, 실패 원인, 개선안을 중심으로 {{ site.posts | size }}개의 글 작성
 
-안녕하세요! 저는 인하대학교 컴퓨터공학과에 재학 중인 문성원입니다. 서버 개발과 인공지능에 관심있습니다.
+## Contact
 
-## 관심 분야
-
-* **웹 개발**: 백엔드(Spring Boot, Node.js)
-* **알고리즘 & 자료구조**: BOJ,Programmers에서 문제 풀이
-* **인공지능**: 기초 머신러닝 모델 실험 및 데이터 분석
-* **DevOps**: CI/CD 파이프라인 구축, Docker, Kubernetes 기초
-
-## 연락
-
-* 이메일: [moonjs1011@gmail.com](mailto:moonjs1011@gmail.com)
-* GitHub: [moonjs1011](https://github.com/moonjs1011)
+- Email: [moonjs1011@gmail.com](mailto:moonjs1011@gmail.com)
+- GitHub: [github.com/moonjs1011](https://github.com/moonjs1011)

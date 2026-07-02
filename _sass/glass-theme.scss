@@ -1,1201 +1,444 @@
-/* ===================================================
-   Glass Theme — Liquid Glass / Glassmorphism for Chirpy
-   =================================================== */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap');
 
-/* ── 0. Font Import ─────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-
-/* ── 1. CSS Custom Properties (Theme Tokens) ────── */
 :root {
-  /* Background */
-  --bg:              #0d1117;
-  --bg-alt:          #161b22;
+  --portfolio-bg: #f4f2ed;
+  --portfolio-paper: #fffefb;
+  --portfolio-ink: #171915;
+  --portfolio-muted: #686a63;
+  --portfolio-line: #d9d6cd;
+  --portfolio-accent: #2f5d50;
+  --portfolio-accent-soft: #dfe9e3;
+  --portfolio-orange: #d9673f;
+  --portfolio-code: #1c211f;
+  --portfolio-radius: 18px;
 
-  /* Glass surfaces */
-  --surface:         rgba(22, 27, 34, 0.85);
-  --surface-glass:   rgba(255, 255, 255, 0.05);
-  --surface-hover:   rgba(255, 255, 255, 0.08);
-  --surface-card:    rgba(22, 27, 34, 0.75);
-
-  /* Text */
-  --text-primary:    #e6edf3;
-  --text-secondary:  #8b949e;
-  --text-muted:      #6e7681;
-  --text-code:       #f0f6fc;
-
-  /* Borders */
-  --border-glass:    rgba(255, 255, 255, 0.10);
-  --border-subtle:   rgba(255, 255, 255, 0.06);
-  --border-accent:   rgba(88, 166, 255, 0.30);
-
-  /* Accent */
-  --accent:          #58a6ff;
-  --accent-soft:     rgba(88, 166, 255, 0.15);
-  --accent-glow:     rgba(88, 166, 255, 0.08);
-  --accent-hover:    #79c0ff;
-
-  /* Shadows */
-  --shadow-glass:    0 8px 32px rgba(0, 0, 0, 0.40), 0 1px 0 rgba(255,255,255,0.06) inset;
-  --shadow-card:     0 4px 24px rgba(0, 0, 0, 0.30);
-  --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.50), 0 1px 0 rgba(255,255,255,0.08) inset;
-  --shadow-sm:       0 2px 8px rgba(0, 0, 0, 0.20);
-
-  /* Blur */
-  --blur-glass:      blur(18px) saturate(160%);
-  --blur-light:      blur(8px);
-
-  /* Radius */
-  --radius-sm:       8px;
-  --radius-md:       14px;
-  --radius-lg:       20px;
-  --radius-xl:       28px;
-
-  /* Gradient background mesh */
-  --gradient-mesh:
-    radial-gradient(ellipse 80% 60% at 20% 0%,   rgba(88,166,255,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 20%,  rgba(124,58,237,0.05) 0%, transparent 60%),
-    radial-gradient(ellipse 70% 60% at 10% 80%,  rgba(56,189,248,0.04) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 90% 90%,  rgba(139,92,246,0.04) 0%, transparent 60%);
-
-  /* Category tag colors */
-  --tag-ps:          rgba(56, 189, 248, 0.15);
-  --tag-aws:         rgba(255, 153, 0, 0.15);
-  --tag-spring:      rgba(107, 193, 100, 0.15);
-  --tag-algo:        rgba(167, 105, 255, 0.15);
-  --tag-backend:     rgba(255, 100, 130, 0.15);
-  --tag-default:     rgba(255, 255, 255, 0.08);
+  --main-bg: var(--portfolio-bg);
+  --sidebar-bg: #202923;
+  --topbar-bg: rgba(244, 242, 237, 0.92);
+  --text-color: var(--portfolio-ink);
+  --text-muted-color: var(--portfolio-muted);
+  --link-color: var(--portfolio-accent);
+  --link-underline-color: rgba(47, 93, 80, 0.28);
+  --main-border-color: var(--portfolio-line);
+  --card-bg: var(--portfolio-paper);
+  --card-header-bg: #f8f7f2;
+  --post-list-text-color: var(--portfolio-ink);
+  --btn-active-text: var(--portfolio-accent);
+  --tag-hover: var(--portfolio-accent-soft);
+  --highlight-bg-color: var(--portfolio-code);
+  --code-header-bg: #262d29;
+  --code-header-text: #c8cec9;
 }
 
-/* Light mode overrides */
-[data-mode="light"],
-html[data-mode="light"] {
-  --bg:              #f6f8fa;
-  --bg-alt:          #ffffff;
-  --surface:         rgba(255, 255, 255, 0.85);
-  --surface-glass:   rgba(255, 255, 255, 0.65);
-  --surface-hover:   rgba(255, 255, 255, 0.90);
-  --surface-card:    rgba(255, 255, 255, 0.72);
-  --text-primary:    #1c2128;
-  --text-secondary:  #57606a;
-  --text-muted:      #8c959f;
-  --text-code:       #1c2128;
-  --border-glass:    rgba(0, 0, 0, 0.09);
-  --border-subtle:   rgba(0, 0, 0, 0.06);
-  --border-accent:   rgba(9, 105, 218, 0.25);
-  --accent:          #0969da;
-  --accent-soft:     rgba(9, 105, 218, 0.10);
-  --accent-glow:     rgba(9, 105, 218, 0.05);
-  --accent-hover:    #0550ae;
-  --shadow-glass:    0 8px 32px rgba(0,0,0,0.10), 0 1px 0 rgba(255,255,255,0.80) inset;
-  --shadow-card:     0 4px 16px rgba(0,0,0,0.08);
-  --shadow-card-hover: 0 12px 32px rgba(0,0,0,0.14), 0 1px 0 rgba(255,255,255,0.90) inset;
-  --gradient-mesh:
-    radial-gradient(ellipse 80% 60% at 20% 0%,   rgba(9,105,218,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 20%,  rgba(88,50,200,0.04) 0%, transparent 60%),
-    radial-gradient(ellipse 70% 60% at 10% 80%,  rgba(3,102,214,0.04) 0%, transparent 60%);
+html[data-mode='dark'] {
+  --portfolio-bg: #151916;
+  --portfolio-paper: #1d231f;
+  --portfolio-ink: #eff2ed;
+  --portfolio-muted: #a6ada6;
+  --portfolio-line: #353d37;
+  --portfolio-accent: #8fc3ad;
+  --portfolio-accent-soft: #263b32;
+  --portfolio-orange: #ef8a62;
+  --main-bg: var(--portfolio-bg);
+  --sidebar-bg: #101411;
+  --topbar-bg: rgba(21, 25, 22, 0.92);
+  --text-color: var(--portfolio-ink);
+  --text-muted-color: var(--portfolio-muted);
+  --link-color: var(--portfolio-accent);
+  --main-border-color: var(--portfolio-line);
+  --card-bg: var(--portfolio-paper);
+  --card-header-bg: #252c27;
+  --post-list-text-color: var(--portfolio-ink);
 }
 
-/* ── 1b. Chirpy v7 Native Variable Overrides ────── */
-/* Dark mode (Chirpy default or system dark) */
-html,
-html[data-mode='dark'],
-[data-mode='dark'] {
-  --main-bg:             #0d1117;
-  --sidebar-bg:          rgba(13, 17, 23, 0.85);
-  --topbar-bg:           rgba(13, 17, 23, 0.80);
-  --text-color:          #e6edf3;
-  --text-muted-color:    #8b949e;
-  --link-color:          #58a6ff;
-  --link-underline-color: rgba(88, 166, 255, 0.3);
-  --main-border-color:   rgba(255, 255, 255, 0.10);
-  --card-header-bg:      rgba(22, 27, 34, 0.90);
-  --post-list-text-color: #c9d1d9;
-  --btn-active-text:     #58a6ff;
-  --tag-hover:           rgba(88, 166, 255, 0.15);
-  --search-result-tag-text: #8b949e;
-  --card-bg:             rgba(22, 27, 34, 0.75);
-  --prompt-info-bg:      rgba(88, 166, 255, 0.10);
-  --prompt-tip-bg:       rgba(63, 185, 80, 0.10);
-  --prompt-warning-bg:   rgba(210, 153, 34, 0.12);
-  --prompt-danger-bg:    rgba(248, 81, 73, 0.12);
-  --highlight-bg-color:  #161b22;
-  --code-header-text:    #8b949e;
-  --code-header-bg:      #161b22;
-}
+html[data-mode='light'] { --sidebar-bg: #202923 !important; }
 
-/* Light mode */
-html[data-mode='light'],
-[data-mode='light'] {
-  --main-bg:             #f6f8fa;
-  --sidebar-bg:          rgba(246, 248, 250, 0.90);
-  --topbar-bg:           rgba(255, 255, 255, 0.85);
-  --text-color:          #1c2128;
-  --text-muted-color:    #57606a;
-  --link-color:          #0969da;
-  --link-underline-color: rgba(9, 105, 218, 0.25);
-  --main-border-color:   rgba(0, 0, 0, 0.09);
-  --card-header-bg:      rgba(255, 255, 255, 0.90);
-  --post-list-text-color: #1c2128;
-  --btn-active-text:     #0969da;
-  --tag-hover:           rgba(9, 105, 218, 0.10);
-  --card-bg:             rgba(255, 255, 255, 0.80);
-  --highlight-bg-color:  #f6f8fa;
-  --code-header-text:    #57606a;
-  --code-header-bg:      #f0f2f4;
-}
+* { box-sizing: border-box; }
 
-/* ── 2. Global Reset & Base ──────────────────────── */
-*, *::before, *::after { box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont,
-               'Segoe UI', system-ui, sans-serif !important;
-  /* background-attachment:fixed 제거 — 스크롤마다 repaint 유발하는 주범 */
-  background-color: var(--bg) !important;
-  color: var(--text-primary) !important;
-  line-height: 1.75 !important;
+  background: var(--portfolio-bg) !important;
+  color: var(--portfolio-ink) !important;
+  font-family: 'Noto Sans KR', 'DM Sans', system-ui, sans-serif !important;
+  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* 배경 gradient는 position:fixed 의사 요소로 처리
-   → GPU 단독 레이어로 분리되어 스크롤 시 repaint 없음 */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-color: var(--bg);
-  background-image: var(--gradient-mesh);
-  pointer-events: none;
-}
+a { text-underline-offset: 0.18em; }
 
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* ── 3. Sidebar Glass ────────────────────────────── */
+html[data-mode='light'] #sidebar,
+html[data-mode='dark'] #sidebar,
 #sidebar {
-  background: var(--surface) !important;
-  -webkit-backdrop-filter: var(--blur-glass) !important;
-  backdrop-filter: var(--blur-glass) !important;
-  border-right: 1px solid var(--border-glass) !important;
-  box-shadow: 4px 0 40px rgba(0,0,0,0.25) !important;
+  background: var(--sidebar-bg) !important;
+  border-right: 0 !important;
+  box-shadow: none !important;
 }
 
-/* Sidebar header / brand */
-#sidebar .site-title a,
-#sidebar .site-title {
-  color: var(--text-primary) !important;
-  font-weight: 700 !important;
+#sidebar .profile-wrapper { padding-top: 2.8rem; }
+
+#sidebar .avatar img {
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.06) !important;
+  filter: grayscale(12%);
+}
+
+#sidebar a.site-title,
+#sidebar .site-title a {
+  color: #f7f7f2 !important;
   font-size: 1.15rem !important;
-  letter-spacing: -0.01em;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
 }
 
 #sidebar .site-subtitle {
-  color: var(--text-secondary) !important;
-  font-size: 0.8rem !important;
-  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.58) !important;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-/* Sidebar nav items */
-#sidebar nav a {
-  color: var(--text-secondary) !important;
-  border-radius: var(--radius-sm) !important;
-  margin: 2px 8px !important;
-  padding: 8px 12px !important;
-  transition: background 0.18s ease, color 0.18s ease !important;
-  font-size: 0.88rem !important;
+#sidebar ul li.nav-item a.nav-link,
+#sidebar .nav-link {
+  border-radius: 8px !important;
+  color: rgba(255, 255, 255, 0.62) !important;
+  font-size: 0.86rem !important;
   font-weight: 500;
+  margin: 0.12rem 0.8rem;
 }
 
-#sidebar nav a:hover,
-#sidebar nav a.active {
-  background: var(--surface-hover) !important;
-  color: var(--accent) !important;
+#sidebar ul li.nav-item a.nav-link:hover,
+#sidebar ul li.nav-item.active a.nav-link,
+#sidebar .nav-link:hover,
+#sidebar .nav-link.active {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #fff !important;
 }
 
-#sidebar nav a.active {
-  background: var(--accent-soft) !important;
-  border: 1px solid var(--border-accent) !important;
-}
-
-/* Sidebar avatar */
-#sidebar .avatar img,
-#sidebar img.avatar {
-  border: 2px solid var(--border-glass) !important;
-  border-radius: 50% !important;
-  box-shadow: 0 0 0 4px var(--accent-soft) !important;
-  transition: box-shadow 0.25s ease !important;
-}
-
-#sidebar .avatar img:hover {
-  box-shadow: 0 0 0 6px var(--accent-soft), 0 4px 20px rgba(88,166,255,0.25) !important;
-}
-
-/* Sidebar social icons */
-#sidebar .sidebar-bottom a {
-  color: var(--text-muted) !important;
-  transition: color 0.18s ease !important;
-}
-
-#sidebar .sidebar-bottom a:hover { color: var(--accent) !important; }
-
-/* ── 4. Topbar Glass ─────────────────────────────── */
-#topbar-wrapper,
-.topbar-wrapper {
-  background: var(--surface) !important;
-  -webkit-backdrop-filter: var(--blur-glass) !important;
-  backdrop-filter: var(--blur-glass) !important;
-  border-bottom: 1px solid var(--border-glass) !important;
-  box-shadow: 0 1px 20px rgba(0,0,0,0.15) !important;
-  /* sticky 요소를 GPU 레이어로 미리 올림 → 스크롤 시 compositor가 직접 처리 */
-  will-change: transform;
-  transform: translateZ(0);
-}
-
-/* Topbar breadcrumb */
-#topbar-wrapper .breadcrumb,
-.topbar .breadcrumb {
-  color: var(--text-secondary) !important;
-  font-size: 0.82rem !important;
-}
-
-#topbar-wrapper .breadcrumb-item a,
-.topbar .breadcrumb-item a {
-  color: var(--accent) !important;
-}
-
-/* Search toggle and theme toggle */
-#topbar-wrapper button,
-#topbar-wrapper .btn {
-  color: var(--text-secondary) !important;
-  background: transparent !important;
-  border: none !important;
-  border-radius: var(--radius-sm) !important;
-  transition: color 0.18s, background 0.18s !important;
-}
-
-#topbar-wrapper button:hover,
-#topbar-wrapper .btn:hover {
-  color: var(--accent) !important;
-  background: var(--surface-hover) !important;
-}
-
-/* ── 5. Main Background & Core Wrapper ───────────── */
-#main-wrapper,
-.main-wrapper {
-  background: transparent !important;
-}
-
-#core-wrapper,
-.core-wrapper {
-  background: transparent !important;
-}
-
-/* ── 6. Home — Hero Section ─────────────────────── */
-/* We inject this right before the post list */
-.glass-hero {
-  /* 배경이 body::before fixed gradient 위에 있으므로 blur 없어도 glass 느낌 */
-  background: var(--surface-glass);
-  border: 1px solid var(--border-glass);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-glass);
-  padding: 3rem 2.5rem;
-  margin-bottom: 2.5rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.glass-hero::before {
+#sidebar .nav-link.active::before {
+  background: #9ec6b5;
+  border-radius: 99px;
   content: '';
+  height: 5px;
+  margin-right: 0.7rem;
+  width: 5px;
+}
+
+#sidebar .sidebar-bottom a,
+#sidebar .sidebar-bottom button {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: none !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+
+#sidebar .sidebar-bottom a:hover,
+#sidebar .sidebar-bottom button:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+}
+
+#sidebar .sidebar-bottom a i,
+#sidebar .sidebar-bottom button i {
+  color: inherit !important;
+  opacity: 1 !important;
+}
+
+#topbar-wrapper {
+  backdrop-filter: blur(14px);
+  background: var(--topbar-bg) !important;
+  border-bottom: 1px solid var(--portfolio-line) !important;
+  box-shadow: none !important;
+}
+
+#main-wrapper,
+#core-wrapper { background: transparent !important; }
+
+.portfolio-hero {
+  background: var(--portfolio-ink);
+  border-radius: 26px;
+  color: var(--portfolio-bg);
+  margin-bottom: 4.5rem;
+  overflow: hidden;
+  padding: clamp(2.3rem, 6vw, 5.5rem);
+  position: relative;
+}
+
+.portfolio-hero::after {
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 50%;
+  content: '';
+  height: 30rem;
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(135deg,
-    rgba(88,166,255,0.08) 0%,
-    rgba(124,58,237,0.06) 50%,
-    transparent 100%);
-  pointer-events: none;
+  right: -12rem;
+  top: -14rem;
+  width: 30rem;
 }
 
-.glass-hero h1 {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
+.portfolio-hero::before {
+  background: var(--portfolio-orange);
+  border-radius: 50%;
+  content: '';
+  height: 0.7rem;
+  position: absolute;
+  right: 2.4rem;
+  top: 2.4rem;
+  width: 0.7rem;
+}
+
+.hero-kicker,
+.section-eyebrow,
+.card-index {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
   font-weight: 700;
-  color: var(--text-primary) !important;
-  margin: 0 0 0.5rem;
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
-.glass-hero p {
-  color: var(--text-secondary) !important;
-  font-size: 0.95rem;
+.hero-kicker { color: #9ec6b5; margin-bottom: 1.5rem; }
+
+.portfolio-hero h1 {
+  color: #f8f7f2 !important;
+  font-size: clamp(2.25rem, 5.4vw, 4.65rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.055em;
+  line-height: 1.1;
+  margin: 0;
+  max-width: 850px;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-hero h1 span { color: #9ec6b5; }
+
+.hero-lead {
+  color: rgba(248, 247, 242, 0.7);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 2rem 0 0;
+  max-width: 630px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 2rem; }
+
+.hero-button {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 99px;
+  color: #f8f7f2 !important;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.72rem 1.15rem;
+  text-decoration: none !important;
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.hero-button.primary { background: #f8f7f2; color: #20231f !important; }
+.hero-button:hover { transform: translateY(-2px); }
+
+.hero-stats {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 3.4rem 0 0;
+  max-width: 680px;
+  padding-top: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-stats div { border-right: 1px solid rgba(255, 255, 255, 0.14); padding: 0 1.2rem; }
+.hero-stats div:first-child { padding-left: 0; }
+.hero-stats div:last-child { border-right: 0; }
+.hero-stats dt { color: #f8f7f2; font: 700 1.35rem 'DM Sans', sans-serif; }
+.hero-stats dd { color: rgba(248, 247, 242, 0.52); font: 500 0.68rem 'DM Sans', sans-serif; margin: 0.25rem 0 0; text-transform: uppercase; }
+
+.featured-work { margin-bottom: 4.5rem; }
+
+.section-heading {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.4rem;
+}
+
+.section-eyebrow { color: var(--portfolio-orange); display: block; margin-bottom: 0.35rem; }
+
+.section-heading h2,
+.latest-heading h2 {
+  color: var(--portfolio-ink) !important;
+  font-size: clamp(1.6rem, 3vw, 2.2rem) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.04em;
   margin: 0;
 }
 
-.glass-hero-tags {
+.section-heading > a { color: var(--portfolio-muted); font-size: 0.78rem; font-weight: 600; text-decoration: none; }
+
+.featured-grid { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.featured-card {
+  background: var(--portfolio-paper);
+  border: 1px solid var(--portfolio-line);
+  border-radius: var(--portfolio-radius);
+  color: var(--portfolio-ink) !important;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-top: 1.25rem;
-}
-
-.glass-hero-tags .hero-tag {
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 4px 12px;
-  border-radius: 100px;
-  border: 1px solid var(--border-glass);
-  background: var(--surface-glass);
-  color: var(--accent);
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-
-/* ── 7. Post List Cards ──────────────────────────── */
-/* Chirpy uses #post-list or .post-list for the home feed */
-#post-list .card-wrapper,
-.post-list .card-wrapper,
-#post-list li,
-.post-list li {
-  list-style: none;
-}
-
-/* The actual post card
-   backdrop-filter 제거 — 스크롤 중 수십 개 카드에 blur 적용하면 GPU 과부하
-   반투명 배경색으로 glass 느낌 유지                                         */
-.card-wrapper .card,
-.post-preview,
-.card {
-  background: var(--surface-card) !important;
-  border: 1px solid var(--border-glass) !important;
-  border-radius: var(--radius-lg) !important;
-  box-shadow: var(--shadow-card) !important;
-  /* transform만 사용 → compositor 레이어에서 처리, layout/paint 없음 */
-  transition: transform 0.20s cubic-bezier(0.25,0.46,0.45,0.94),
-              box-shadow 0.20s ease,
-              border-color 0.20s ease !important;
-  overflow: hidden;
-  position: relative;
-  /* hover 애니메이션을 위해 미리 레이어 생성 */
-  will-change: transform;
-}
-
-.card-wrapper .card::before,
-.post-preview::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-glass), transparent);
-  pointer-events: none;
-}
-
-.card-wrapper .card:hover,
-.post-preview:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: var(--shadow-card-hover) !important;
-  border-color: var(--border-accent) !important;
-}
-
-/* Card body text */
-.card-wrapper .card .card-body,
-.post-preview .card-body {
-  padding: 1.4rem 1.6rem !important;
-}
-
-.card-wrapper .card .card-title a,
-.post-preview h1 a,
-.post-preview .card-title a {
-  color: var(--text-primary) !important;
-  font-weight: 600 !important;
-  font-size: 1.05rem !important;
-  line-height: 1.45 !important;
+  flex-direction: column;
+  min-height: 270px;
+  padding: 1.7rem;
   text-decoration: none !important;
-  transition: color 0.18s ease !important;
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
-.card-wrapper .card .card-title a:hover,
-.post-preview h1 a:hover {
-  color: var(--accent) !important;
+.featured-card--wide { grid-column: 1 / -1; min-height: 310px; }
+
+.featured-card:hover {
+  border-color: var(--portfolio-accent);
+  box-shadow: 0 18px 45px rgba(30, 36, 31, 0.08);
+  transform: translateY(-3px);
 }
 
-.card-wrapper .card .card-text,
-.post-preview p {
-  color: var(--text-secondary) !important;
-  font-size: 0.875rem !important;
-  line-height: 1.65 !important;
-  margin-bottom: 0.75rem !important;
+.card-index { color: var(--portfolio-accent); }
+
+.featured-card h3 {
+  color: var(--portfolio-ink) !important;
+  font-size: clamp(1.35rem, 2.7vw, 2rem) !important;
+  font-weight: 750 !important;
+  letter-spacing: -0.035em;
+  line-height: 1.35;
+  margin: auto 0 0.7rem;
+  max-width: 650px;
 }
 
-/* Card footer: date, categories */
-.card-wrapper .card .card-footer,
-.post-preview .card-footer {
-  border-top: 1px solid var(--border-subtle) !important;
+.featured-card p { color: var(--portfolio-muted); font-size: 0.87rem; margin: 0; max-width: 650px; }
+.card-link { color: var(--portfolio-accent); font-size: 0.76rem; font-weight: 700; margin-top: 1.3rem; }
+
+.latest-heading { border-bottom: 1px solid var(--portfolio-line); margin-bottom: 1.2rem; padding-bottom: 1rem; }
+
+#post-list .card-wrapper { margin-bottom: 0.8rem; }
+
+#post-list .card {
   background: transparent !important;
-  padding: 0.7rem 1.6rem !important;
-  font-size: 0.78rem !important;
-  color: var(--text-muted) !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--portfolio-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0.6rem 0 1.4rem;
+  transition: transform 160ms ease;
 }
 
-/* ── 8. Tag & Category Pills ─────────────────────── */
-.tag,
-.tag-item,
-a.tag,
-.post-tag,
-.badge {
-  display: inline-block;
-  padding: 2px 10px;
-  border-radius: 100px;
-  font-size: 0.74rem;
-  font-weight: 500;
-  border: 1px solid var(--border-glass);
-  background: var(--tag-default);
-  color: var(--text-secondary) !important;
-  text-decoration: none !important;
-  transition: background 0.18s, border-color 0.18s, color 0.18s;
-  line-height: 1.8;
+#post-list .card:hover { transform: translateX(5px); }
+#post-list .card-body {
+  padding: 1.75rem 2rem !important;
 }
+#post-list .card-title { color: var(--portfolio-ink) !important; font-size: 1.2rem !important; font-weight: 700 !important; letter-spacing: -0.025em; }
+#post-list .card-text { color: var(--portfolio-muted) !important; font-size: 0.84rem; }
+#post-list .post-meta { color: var(--portfolio-muted) !important; font-family: 'DM Sans', sans-serif; font-size: 0.7rem !important; }
 
-.tag:hover,
-a.tag:hover,
-.post-tag:hover {
-  background: var(--accent-soft) !important;
-  border-color: var(--border-accent) !important;
-  color: var(--accent) !important;
-}
+article,
+.content { color: var(--portfolio-ink); }
 
-/* Category-specific colors */
-.tag[href*="problemsolving"],
-.tag[href*="ProblemSolving"],
-.post-tag[data-tag*="boj"],
-.post-tag[data-tag*="ps"] {
-  background: var(--tag-ps) !important;
-  border-color: rgba(56,189,248,0.3) !important;
-  color: #38bdf8 !important;
-}
-
-.tag[href*="aws"],
-.tag[href*="AWS"] {
-  background: var(--tag-aws) !important;
-  border-color: rgba(255,153,0,0.3) !important;
-  color: #ff9900 !important;
-}
-
-.tag[href*="spring"],
-.tag[href*="Spring"] {
-  background: var(--tag-spring) !important;
-  border-color: rgba(107,193,100,0.3) !important;
-  color: #6bc164 !important;
-}
-
-.tag[href*="algorithm"],
-.tag[href*="Algorithm"] {
-  background: var(--tag-algo) !important;
-  border-color: rgba(167,105,255,0.3) !important;
-  color: #a769ff !important;
-}
-
-/* ── 9. Post Detail Page ─────────────────────────── */
-/* Post header */
-.post-header,
-#post-wrapper .post-meta,
-article .post-header {
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-subtle);
-  margin-bottom: 2rem;
+main > article[data-toc] {
+  padding-left: clamp(1.25rem, 3vw, 2.75rem) !important;
+  padding-right: clamp(1.25rem, 3vw, 2.75rem) !important;
+  padding-top: 2rem;
 }
 
 .post-title,
-article h1.post-title {
-  font-size: clamp(1.5rem, 3.5vw, 2.2rem) !important;
-  font-weight: 700 !important;
-  color: var(--text-primary) !important;
-  line-height: 1.35 !important;
-  letter-spacing: -0.02em !important;
-  margin-bottom: 0.75rem !important;
-}
+h1 { color: var(--portfolio-ink) !important; font-weight: 800 !important; letter-spacing: -0.04em; }
 
-.post-meta,
-.post-meta-wrap {
-  color: var(--text-muted) !important;
-  font-size: 0.82rem !important;
-}
-
-/* Post content typography */
 .post-content,
-article .content,
-#post-wrapper .content {
-  color: var(--text-primary) !important;
-  font-size: 1rem !important;
-  line-height: 1.85 !important;
-  max-width: 72ch;
-}
-
-/* Headings in post */
-.post-content h1,
-.post-content h2,
-.post-content h3,
-.post-content h4,
-article .content h1,
-article .content h2,
-article .content h3,
-article .content h4 {
-  color: var(--text-primary) !important;
-  font-weight: 700 !important;
-  letter-spacing: -0.01em;
-  margin-top: 2.25rem;
-  margin-bottom: 0.75rem;
-}
+article .content { font-size: 0.96rem; line-height: 1.85; }
 
 .post-content h2,
 article .content h2 {
-  font-size: 1.4rem !important;
-  padding-bottom: 0.4rem;
-  border-bottom: 1px solid var(--border-subtle);
+  border-top: 1px solid var(--portfolio-line);
+  color: var(--portfolio-ink) !important;
+  font-size: 1.45rem !important;
+  font-weight: 750 !important;
+  letter-spacing: -0.03em;
+  margin-top: 3.4rem !important;
+  padding-top: 1.5rem;
 }
 
 .post-content h3,
-article .content h3 {
-  font-size: 1.15rem !important;
-}
+article .content h3 { color: var(--portfolio-ink) !important; font-size: 1.12rem !important; font-weight: 700 !important; margin-top: 2.2rem; }
 
-/* Paragraph spacing */
-.post-content p,
-article .content p {
-  margin-bottom: 1.25rem;
-  color: var(--text-primary) !important;
-}
-
-/* Links in content */
-.post-content a,
-article .content a {
-  color: var(--accent) !important;
-  text-decoration: underline;
-  text-decoration-color: var(--accent-soft);
-  text-underline-offset: 3px;
-  transition: color 0.18s, text-decoration-color 0.18s;
-}
-
-.post-content a:hover,
-article .content a:hover {
-  color: var(--accent-hover) !important;
-  text-decoration-color: var(--accent);
-}
-
-/* ── 10. Code Blocks ─────────────────────────────── */
-/* All code elements: monospace font */
-code, kbd, samp, pre {
-  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code',
-               ui-monospace, monospace !important;
-}
-
-/* ---- Inline code (NOT inside a code block) ---- */
-/* Chirpy inline code: <code class="language-plaintext highlighter-rouge"> */
-:not(.highlight):not(pre) > code {
-  font-size: 0.87em !important;
-  padding: 2px 7px !important;
-  border-radius: 5px !important;
-  background: rgba(110, 118, 129, 0.15) !important;
-  color: #79c0ff !important;
-  border: 1px solid rgba(110, 118, 129, 0.18) !important;
-  white-space: nowrap;
-}
-
-[data-mode='light'] :not(.highlight):not(pre) > code {
-  background: rgba(175, 184, 193, 0.20) !important;
-  color: #0550ae !important;
-  border-color: rgba(175, 184, 193, 0.30) !important;
-}
-
-/* ---- Block code wrapper (Chirpy v7.5 actual structure) ----
-   HTML: div.language-LANG.highlighter-rouge
-           > div.code-header
-           > div.highlight
-               > code > table.rouge-table > tr
-                   > td.rouge-gutter  (line numbers)
-                   > td.rouge-code    (code)
-*/
-div.highlighter-rouge {
-  background: #161b22 !important;
-  border: 1px solid var(--border-glass) !important;
-  border-radius: var(--radius-md) !important;
-  box-shadow: var(--shadow-card) !important;
-  margin: 1.5rem 0 !important;
-  overflow: hidden;
-  position: relative;
-}
-
-[data-mode='light'] div.highlighter-rouge {
-  background: #f0f2f4 !important;
-  border-color: rgba(0, 0, 0, 0.12) !important;
-}
-
-/* Code header: language label + copy button */
-div.highlighter-rouge .code-header {
-  background: rgba(0, 0, 0, 0.30) !important;
-  border-bottom: 1px solid rgba(255,255,255,0.07) !important;
-  padding: 7px 14px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  min-height: 38px;
-}
-
-[data-mode='light'] div.highlighter-rouge .code-header {
-  background: rgba(0, 0, 0, 0.05) !important;
-  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
-}
-
-div.highlighter-rouge .code-header span[data-label-text] {
-  font-family: 'JetBrains Mono', monospace !important;
-  font-size: 0.74rem !important;
-  font-weight: 600 !important;
-  color: var(--text-secondary) !important;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-/* Chirpy built-in copy button */
-div.highlighter-rouge .code-header button {
-  background: transparent !important;
-  border: 1px solid var(--border-glass) !important;
-  border-radius: 5px !important;
-  color: var(--text-muted) !important;
-  padding: 3px 10px !important;
-  font-size: 0.72rem !important;
-  font-family: 'JetBrains Mono', monospace !important;
-  cursor: pointer !important;
-  transition: color 0.15s, background 0.15s, border-color 0.15s !important;
-  line-height: 1.6;
-}
-
-div.highlighter-rouge .code-header button:hover {
-  background: var(--accent-soft) !important;
-  border-color: var(--border-accent) !important;
-  color: var(--accent) !important;
-}
-
-/* Inner highlight area — no extra decoration */
-div.highlighter-rouge .highlight {
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  margin: 0 !important;
-  overflow-x: auto;
-}
-
-/* Rouge table: reset ALL default table styles */
-div.highlighter-rouge .rouge-table {
-  border: none !important;
-  background: transparent !important;
-  border-collapse: collapse !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  margin: 0 !important;
-  width: 100%;
-  font-size: 0;  /* prevent gap between cells */
-}
-
-div.highlighter-rouge .rouge-table td,
-div.highlighter-rouge .rouge-table th {
-  border: none !important;
-  padding: 0 !important;
-  background: transparent !important;
-  font-size: 0.875rem;
-}
-
-div.highlighter-rouge .rouge-table tr:hover td {
-  background: transparent !important;
-}
-
-/* Line number column */
-div.highlighter-rouge .rouge-gutter {
-  width: 1%;
-  min-width: 2.5rem;
-  background: rgba(0, 0, 0, 0.18) !important;
-  border-right: 1px solid rgba(255,255,255,0.06) !important;
-  user-select: none;
-  vertical-align: top;
-}
-
-[data-mode='light'] div.highlighter-rouge .rouge-gutter {
-  background: rgba(0, 0, 0, 0.05) !important;
-  border-right-color: rgba(0, 0, 0, 0.08) !important;
-}
-
-div.highlighter-rouge .rouge-gutter pre.lineno {
-  background: transparent !important;
-  border: none !important;
-  margin: 0 !important;
-  padding: 0.9rem 0.75rem !important;
-  color: var(--text-muted) !important;
-  font-size: 0.82rem !important;
-  line-height: 1.7 !important;
-  text-align: right;
-}
-
-/* Code content column */
-div.highlighter-rouge .rouge-code {
-  vertical-align: top;
-}
-
-div.highlighter-rouge .rouge-code pre {
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  margin: 0 !important;
-  padding: 0.9rem 1.1rem !important;
-  overflow-x: visible;
-  font-size: 0.875rem !important;
-  line-height: 1.7 !important;
-  color: #e6edf3 !important;
-  white-space: pre;
-}
-
-[data-mode='light'] div.highlighter-rouge .rouge-code pre {
-  color: #24292f !important;
-}
-
-div.highlighter-rouge .rouge-code pre code {
-  background: transparent !important;
-  border: none !important;
-  padding: 0 !important;
-  color: inherit !important;
-  font-size: inherit !important;
-  white-space: pre;
-}
-
-/* Code block without line numbers (plain pre/code) */
-div.highlighter-rouge .highlight > code:not([class]) {
-  display: block;
-  padding: 0.9rem 1.1rem !important;
-  overflow-x: auto;
-  color: #e6edf3 !important;
-  font-size: 0.875rem !important;
-  line-height: 1.7;
-}
-
-/* Fallback: keep old figure.highlight for any edge cases */
-figure.highlight {
-  background: #161b22 !important;
-  border: 1px solid var(--border-glass) !important;
-  border-radius: var(--radius-md) !important;
-  overflow: hidden;
-  margin: 1.5rem 0 !important;
-}
-
-/* ── 11. Blockquote ──────────────────────────────── */
-.post-content blockquote,
-article .content blockquote {
-  background: var(--surface-glass) !important;
-  border: 1px solid var(--border-glass) !important;
-  border-left: 3px solid var(--accent) !important;
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0 !important;
-  padding: 1rem 1.5rem !important;
-  margin: 1.5rem 0 !important;
-  color: var(--text-secondary) !important;
-  font-style: italic;
-}
-
-.post-content blockquote p,
-article .content blockquote p {
-  color: var(--text-secondary) !important;
-  margin-bottom: 0 !important;
-}
-
-/* ── 12. Tables (content only — excludes rouge-table) ── */
-.post-content table:not(.rouge-table),
-article .content table:not(.rouge-table) {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  border: 1px solid var(--border-glass) !important;
-  border-radius: var(--radius-md) !important;
-  overflow: hidden;
-  margin: 1.5rem 0;
-  background: var(--surface-glass) !important;
-  font-size: 0.9rem;
-}
-
-.post-content table:not(.rouge-table) th,
-article .content table:not(.rouge-table) th {
-  background: rgba(88,166,255,0.08) !important;
-  color: var(--text-primary) !important;
-  font-weight: 600 !important;
-  padding: 0.7rem 1rem !important;
-  border-bottom: 1px solid var(--border-glass) !important;
-  text-align: left;
-}
-
-.post-content table:not(.rouge-table) td,
-article .content table:not(.rouge-table) td {
-  padding: 0.65rem 1rem !important;
-  border-bottom: 1px solid var(--border-subtle) !important;
-  color: var(--text-secondary) !important;
-}
-
-.post-content table:not(.rouge-table) tr:last-child td,
-article .content table:not(.rouge-table) tr:last-child td {
-  border-bottom: none !important;
-}
-
-.post-content table:not(.rouge-table) tr:hover td,
-article .content table:not(.rouge-table) tr:hover td {
-  background: var(--surface-hover) !important;
-}
-
-/* ── 13. Table of Contents ───────────────────────── */
-#toc-wrapper,
-.toc-wrapper {
-  background: var(--surface-glass) !important;
-  border: 1px solid var(--border-glass) !important;
-  border-radius: var(--radius-md) !important;
-  padding: 1rem 1.25rem !important;
-}
-
-#toc-wrapper .toc-header,
-.toc-wrapper .toc-header {
-  color: var(--text-muted) !important;
-  font-size: 0.75rem !important;
-  font-weight: 600 !important;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.5rem;
-}
-
-#toc-wrapper a,
-.toc-wrapper a {
-  color: var(--text-secondary) !important;
-  font-size: 0.84rem !important;
-  text-decoration: none !important;
-  transition: color 0.18s !important;
-  line-height: 1.6;
-}
-
-#toc-wrapper a:hover,
-.toc-wrapper a:hover,
-#toc-wrapper a.active,
-.toc-wrapper a.active {
-  color: var(--accent) !important;
-}
-
-/* ── 14. Prev/Next Post Navigation ───────────────── */
-.post-navigation,
-.pagination-nav,
-#post-nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-top: 3rem;
-}
-
-.post-navigation a,
-.page-navigate a,
-.btn.btn-outline-primary {
-  display: block;
-  background: var(--surface-card) !important;
-  -webkit-backdrop-filter: var(--blur-light) !important;
-  backdrop-filter: var(--blur-light) !important;
-  border: 1px solid var(--border-glass) !important;
-  border-radius: var(--radius-md) !important;
-  padding: 1rem 1.25rem !important;
-  color: var(--text-secondary) !important;
-  text-decoration: none !important;
-  transition: transform 0.20s ease, box-shadow 0.20s ease, border-color 0.20s ease !important;
-  font-size: 0.875rem;
-}
-
-.post-navigation a:hover,
-.page-navigate a:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: var(--shadow-card) !important;
-  border-color: var(--border-accent) !important;
-  color: var(--accent) !important;
-}
-
-/* ── 15. Categories & Tags Pages ─────────────────── */
-/* Category list */
-#categories,
-.categories-list {
-  margin-top: 1.5rem;
-}
-
-#categories .category-item,
-.category-item {
-  background: var(--surface-card);
-  -webkit-backdrop-filter: var(--blur-light);
-  backdrop-filter: var(--blur-light);
-  border: 1px solid var(--border-glass);
-  border-radius: var(--radius-md);
-  padding: 0.8rem 1.25rem;
-  margin-bottom: 0.75rem;
-  transition: transform 0.18s ease, border-color 0.18s ease;
-}
-
-#categories .category-item:hover {
-  transform: translateX(4px);
-  border-color: var(--border-accent);
-}
-
-#categories .category-item a {
-  color: var(--text-primary) !important;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-#categories .category-item .post-count {
-  color: var(--text-muted);
-  font-size: 0.82rem;
-  background: var(--surface-glass);
-  padding: 1px 8px;
-  border-radius: 100px;
-  border: 1px solid var(--border-subtle);
-}
-
-/* Tag cloud */
-#tags,
-.tag-cloud {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  padding: 1rem 0;
-}
-
-/* ── 16. Pagination ──────────────────────────────── */
-.pagination .page-item .page-link {
-  background: var(--surface-card) !important;
-  border: 1px solid var(--border-glass) !important;
-  color: var(--text-secondary) !important;
-  border-radius: var(--radius-sm) !important;
-  margin: 0 3px !important;
-  transition: all 0.18s ease !important;
-}
-
-.pagination .page-item .page-link:hover {
-  background: var(--surface-hover) !important;
-  border-color: var(--border-accent) !important;
-  color: var(--accent) !important;
-}
-
-.pagination .page-item.active .page-link {
-  background: var(--accent-soft) !important;
-  border-color: var(--border-accent) !important;
-  color: var(--accent) !important;
-}
-
-/* ── 17. Search ──────────────────────────────────── */
-#search-wrapper,
-.search-wrapper {
-  background: var(--surface-card) !important;
-  border: 1px solid var(--border-glass) !important;
-  border-radius: var(--radius-lg) !important;
-  box-shadow: var(--shadow-glass) !important;
-}
-
-#search-input,
-.search-input {
-  background: transparent !important;
-  color: var(--text-primary) !important;
-  border: none !important;
-  font-size: 1rem !important;
-}
-
-#search-input::placeholder,
-.search-input::placeholder {
-  color: var(--text-muted) !important;
-}
-
-/* Search results */
-#search-results .post-preview {
-  border-bottom: 1px solid var(--border-subtle) !important;
-}
-
-/* ── 18. Footer ──────────────────────────────────── */
-footer,
-#footer {
-  background: var(--surface) !important;
-  -webkit-backdrop-filter: var(--blur-glass) !important;
-  backdrop-filter: var(--blur-glass) !important;
-  border-top: 1px solid var(--border-glass) !important;
-  color: var(--text-muted) !important;
-  font-size: 0.82rem !important;
-}
-
-footer a {
-  color: var(--text-secondary) !important;
-  text-decoration: none;
-  transition: color 0.18s;
-}
-
-footer a:hover { color: var(--accent) !important; }
-
-/* ── 19. Scrollbar ───────────────────────────────── */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb {
-  background: var(--border-glass);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
-
-/* ── 20. Focus Accessibility ─────────────────────── */
-:focus-visible {
-  outline: 2px solid var(--accent) !important;
-  outline-offset: 3px !important;
-  border-radius: var(--radius-sm) !important;
-}
-
-/* ── 21. Image styles in posts ───────────────────── */
 .post-content img,
-article .content img {
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-glass);
-  max-width: 100%;
-  height: auto;
-  box-shadow: var(--shadow-card);
-  margin: 0.5rem 0;
+article .content img { border: 1px solid var(--portfolio-line); border-radius: 12px; }
+
+blockquote {
+  background: var(--portfolio-accent-soft) !important;
+  border-left: 3px solid var(--portfolio-accent) !important;
+  border-radius: 0 10px 10px 0;
+  color: var(--portfolio-ink) !important;
+  padding: 1rem 1.2rem !important;
 }
 
-/* ── 22. Horizontal Rules ────────────────────────── */
-.post-content hr,
-article .content hr {
-  border: none !important;
-  border-top: 1px solid var(--border-subtle) !important;
-  margin: 2rem 0 !important;
+code { font-family: 'DM Sans', ui-monospace, monospace !important; }
+
+div.highlight,
+figure.highlight,
+.highlighter-rouge {
+  border: 1px solid var(--portfolio-line) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  overflow: hidden;
 }
 
-/* ── 23. Lists in posts ──────────────────────────── */
-.post-content ul,
-.post-content ol,
-article .content ul,
-article .content ol {
-  color: var(--text-primary) !important;
-  padding-left: 1.5rem;
-  margin-bottom: 1.25rem;
+.post-tag,
+a.post-tag {
+  background: var(--portfolio-accent-soft) !important;
+  border: 0 !important;
+  border-radius: 99px !important;
+  color: var(--portfolio-accent) !important;
+  font-size: 0.7rem !important;
+  font-weight: 600;
+  padding: 0.28rem 0.7rem !important;
 }
 
-.post-content li,
-article .content li {
-  margin-bottom: 0.35rem;
-  line-height: 1.75;
+.about-intro {
+  background: var(--portfolio-ink);
+  border-radius: 22px;
+  color: var(--portfolio-bg);
+  margin: 0.6rem 0 3rem;
+  padding: clamp(2rem, 5vw, 4rem);
 }
 
-/* ── 24. Responsive ──────────────────────────────── */
-@media (max-width: 849px) {
-  #sidebar {
-    background: var(--surface) !important;
-  }
+.about-intro h2 { border: 0 !important; color: #f8f7f2 !important; font-size: clamp(1.75rem, 4vw, 2.8rem) !important; line-height: 1.35; margin: 0.7rem 0 1.3rem !important; padding: 0 !important; }
+.about-intro p { color: rgba(248, 247, 242, 0.68); margin: 0; max-width: 700px; }
 
-  /* On mobile, topbar is the nav */
-  #topbar-wrapper {
-    -webkit-backdrop-filter: var(--blur-glass) !important;
-    backdrop-filter: var(--blur-glass) !important;
-  }
+.strength-grid { display: grid; gap: 0.8rem; grid-template-columns: repeat(2, 1fr); margin: 1.5rem 0 3rem; }
+.strength-grid div { background: var(--portfolio-paper); border: 1px solid var(--portfolio-line); border-radius: 12px; display: flex; flex-direction: column; padding: 1.25rem; }
+.strength-grid strong { color: var(--portfolio-ink); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; }
+.strength-grid span { color: var(--portfolio-muted); font-size: 0.76rem; margin-top: 0.35rem; }
 
-  /* Single column cards */
-  .card-wrapper {
-    grid-template-columns: 1fr !important;
-  }
+#toc-wrapper { border-left: 1px solid var(--portfolio-line); }
+#toc-wrapper a { color: var(--portfolio-muted); font-size: 0.75rem; }
+#toc-wrapper a.active { color: var(--portfolio-accent) !important; font-weight: 700; }
 
-  .post-content,
-  article .content {
-    font-size: 0.97rem !important;
-  }
+.pagination .page-link { background: var(--portfolio-paper) !important; border-color: var(--portfolio-line) !important; color: var(--portfolio-ink) !important; }
 
-  .glass-hero {
-    padding: 2rem 1.5rem;
-    border-radius: var(--radius-lg);
-  }
+footer { border-top: 1px solid var(--portfolio-line) !important; color: var(--portfolio-muted) !important; }
 
-  .glass-hero h1 {
-    font-size: 1.5rem;
-  }
+@media (max-width: 767px) {
+  .portfolio-hero { border-radius: 18px; margin-bottom: 3rem; padding: 2rem 1.35rem; }
+  .portfolio-hero::after { display: none; }
+  .hero-stats { gap: 0; grid-template-columns: repeat(3, 1fr); margin-top: 2.4rem; }
+  .hero-stats div { padding: 0 0.55rem; }
+  .hero-stats dt { font-size: 1rem; }
+  .hero-stats dd { font-size: 0.55rem; }
+  .featured-grid,
+  .strength-grid { grid-template-columns: 1fr; }
+  .featured-card--wide { grid-column: auto; }
+  .featured-card { min-height: 235px; }
+  .section-heading { align-items: flex-start; }
+  #post-list .card-body { padding: 1.35rem 1.25rem !important; }
 }
 
-@media (min-width: 850px) and (max-width: 1199px) {
-  .post-content,
-  article .content {
-    max-width: 68ch;
-  }
-}
-
-/* ── 25. Backdrop-filter fallback ────────────────── */
-@supports not (backdrop-filter: blur(1px)) {
-  #sidebar,
-  #topbar-wrapper,
-  .card,
-  .post-preview,
-  #toc-wrapper,
-  .glass-hero {
-    background: var(--surface) !important;
-  }
-}
-
-/* ── 26. Chirpy-specific overrides ───────────────── */
-/* Override Chirpy's default dark/light variables */
-html[data-mode="dark"],
-html:not([data-mode]) {
-  --main-bg: var(--bg) !important;
-  --sidebar-bg: transparent !important;
-  --topbar-bg: transparent !important;
-}
-
-/* Panel / card used in categories and archives */
-.panel-heading,
-.panel {
-  background: var(--surface-card) !important;
-  border: 1px solid var(--border-glass) !important;
-  border-radius: var(--radius-md) !important;
-}
-
-/* Archive list items */
-.archive-item {
-  border-bottom: 1px solid var(--border-subtle) !important;
-  padding: 0.6rem 0 !important;
-}
-
-.archive-item a {
-  color: var(--text-primary) !important;
-  text-decoration: none !important;
-  font-weight: 500 !important;
-  transition: color 0.18s !important;
-}
-
-.archive-item a:hover { color: var(--accent) !important; }
-
-.archive-item .archive-date {
-  color: var(--text-muted) !important;
-  font-size: 0.8rem !important;
-}
-
-/* Year badge in archives */
-.post-year, .year {
-  color: var(--accent) !important;
-  font-weight: 700 !important;
-  font-size: 1.2rem !important;
-}
-
-/* Progress bar / reading indicator */
-#reading-progress-bar {
-  background: linear-gradient(90deg, var(--accent), #79c0ff) !important;
-  height: 2px !important;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
