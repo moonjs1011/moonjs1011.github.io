@@ -14,8 +14,8 @@ mermaid: true
 ```properties
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.datasource.url=jdbc:mysql://localhost:3306/ssafylive?serverTimezone=UTC
-spring.datasource.username=ssafy
-spring.datasource.password=ssafy
+spring.datasource.username=${DB_USERNAME}
+spring.datasource.password=${DB_PASSWORD}
 
 mybatis.type-aliases-package=com.ssafy.live.*.dto
 mybatis.mapper-locations=classpath:mappers/*.xml
@@ -23,6 +23,8 @@ mybatis.mapper-locations=classpath:mappers/*.xml
 
 겉으로 보면 단순하다.
 DB 연결 정보를 적고, MyBatis가 DTO와 Mapper XML을 찾을 위치를 알려주면 끝나 보인다.
+
+> 예제에서도 계정 정보는 직접 저장하지 않고 환경 변수로 주입한다. 실습용 계정이라도 저장소에 평문 비밀번호를 남기는 습관은 피하는 편이 안전하다.
 
 그런데 실제로는 여기서부터 여러 계층이 이어진다.
 

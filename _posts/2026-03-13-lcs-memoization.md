@@ -43,7 +43,7 @@ return cache[i][j];
 | 순수 재귀 | 계산 불가(수 초 이상) | 호출 트리 폭발 |
 | 메모이제이션 | 약 40~60ms | 동일 입력 |
 
-실습 코드: `/Users/sung_1/Documents/2026-1/Algorithm/study-season-01/06 Dynamic Programming/문성원/LCS_Non_DP.java`, `LCS_DP.java`.
+실습에서는 동일한 입력에 대해 순수 재귀 버전과 메모이제이션 버전을 각각 실행해 호출 횟수와 실행 시간을 비교했다.
 
 ## 호출 트리 직관
 - 재귀만 쓰면 `(i,j)` 조합이 다시 등장할 때마다 분기한다. 깊이가 길어질수록 동일한 서브문제를 수십만 번 반복하게 된다.

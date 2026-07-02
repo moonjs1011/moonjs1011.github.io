@@ -6,7 +6,7 @@ tags: [howru, kafka, cors, auth, msa]
 comment: true
 ---
 
-팀 HowRU 백엔드 레포(`/Users/sung_1/Documents/멋사/howru/server`)에서 배포 막판에 부딪힌 이슈 네 가지를 기록했다. 숫자 옆의 코드들은 다 커밋 해시였는데, 글 흐름만 남기고 지웠다.
+팀 HowRU 백엔드의 배포 막바지에 부딪힌 이슈 네 가지를 기록했다. 내부 경로와 커밋 식별자는 제외하고 문제 상황과 해결 과정만 남겼다.
 
 ## 1) 배포 환경 Kafka 미연결
 - 증상: MSK 연결이 실패하면서 애플리케이션이 부팅 중단.
